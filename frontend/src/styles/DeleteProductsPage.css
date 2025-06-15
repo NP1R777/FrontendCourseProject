@@ -1,0 +1,183 @@
+.delete-products-container1 {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header-section1 {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.back-button1 {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-button1:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.3);
+}
+
+.header-section1 h1 {
+  color: #0d47a1;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.header-section1 p {
+  color: #546e7a;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.products-grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.product-card1 {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #e3f2fd;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  box-shadow: 0 5px 15px rgba(0, 92, 153, 0.1);
+}
+
+.product-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 92, 153, 0.2);
+  border-color: #90caf9;
+}
+
+.product-card1.deleted {
+  background: #f9f9f9;
+  border-color: #e0e0e0;
+  opacity: 0.8;
+}
+
+.product-card1.deleted:hover {
+  border-color: #bdbdbd;
+}
+
+.product-name1 {
+  color: #0d47a1;
+  font-size: 1.3rem;
+  margin: 0 0 15px 0;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-status1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.status-active1 {
+  color: #4caf50;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 20px;
+}
+
+.status-deleted1 {
+  color: #f44336;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 20px;
+}
+
+.action-button1 {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.delete-button1 {
+  background: linear-gradient(135deg, #f44336, #e53935);
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.2);
+}
+
+.delete-button1:hover {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(244, 67, 54, 0.3);
+}
+
+.restore-button1 {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.restore-button1:hover {
+  background: linear-gradient(135deg, #43a047, #1b5e20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+.loading1, .error1 {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+}
+
+.loading1 {
+  color: #2196f3;
+}
+
+.error1 {
+  color: #f44336;
+}
+
+/* Анимация при изменении статуса */
+@keyframes statusChange {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.product-card1.deleted {
+  animation: statusChange 0.5s ease;
+}

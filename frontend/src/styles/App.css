@@ -1,0 +1,388 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Стили для header */
+/* Основные стили для горизонтального меню */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Выравниваем пункты меню по правому краю */
+  align-items: center; /* Выравниваем пункты по вертикали */
+  gap: 20px; /* Расстояние между пунктами меню */
+}
+
+/* Стили для элементов меню */
+header nav ul li {
+  margin: 0; /* Убираем отступы */
+  display: flex; /* Делаем элементы flex-контейнерами */
+  align-items: center; /* Выравниваем содержимое по вертикали */
+}
+
+/* Анимация для логотипа */
+header .logo h1 {
+  margin: 0;
+  font-size: 24px;
+  animation: logoPulse 3s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Анимация для навигационных элементов */
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Анимация для кнопки выхода */
+header nav ul li button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  height: 30px; /* Фиксированная высота для выравнивания */
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Анимация для кнопки выхода - эффект свечения */
+header nav ul li button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+header nav ul li button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Ключевые кадры для анимации логотипа */
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Анимация появления для всего хедера */
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 20px 0;
+  animation: headerFadeIn 0.5s ease-out;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Дополнительные стили для контейнера */
+header .container {
+  display: flex;
+  justify-content: space-between; /* Логотип слева, меню справа */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* Стили для main */
+main {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b3e5fc 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.product-card {
+  width: 300px;
+  height: 500px;
+  margin: 20px 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: auto;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: auto;
+  width: 100%;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+#sortButtons {
+  width: 400px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.sort_up, .sort_down {
+  margin: 0 5px;
+}
+
+/* Основная анимация появления страницы */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анимация для каскадного появления карточек */
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Применение анимации к основной странице */
+main {
+  animation: fadeInScale 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Анимация для каждой карточки товара */
+.product-card {
+  opacity: 0;
+  animation: cardEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Задержки для каскадного эффекта */
+.product-card:nth-child(1) { animation-delay: 0.3s; }
+.product-card:nth-child(2) { animation-delay: 0.45s; }
+.product-card:nth-child(3) { animation-delay: 0.6s; }
+.product-card:nth-child(4) { animation-delay: 0.75s; }
+.product-card:nth-child(5) { animation-delay: 0.9s; }
+.product-card:nth-child(6) { animation-delay: 1.05s; }
+.product-card:nth-child(7) { animation-delay: 1.2s; }
+.product-card:nth-child(8) { animation-delay: 1.35s; }
+.product-card:nth-child(n+9) { animation-delay: 1.5s; }
+
+/* Дополнительные эффекты при наведении */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация для кнопки */
+.add-to-cart {
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.add-to-cart:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Стили для footer */
+footer {
+  background-color: #0056b3;
+  color: white;
+  padding: 20px 0;
+  margin-top: 0px;
+  flex-shrink: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+footer nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+footer nav ul li {
+  margin-left: 20px;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
+}

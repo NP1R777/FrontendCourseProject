@@ -1,0 +1,185 @@
+.edit-order-container1 {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.edit-order-card1 {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 92, 153, 0.15);
+  overflow: hidden;
+  border: 1px solid #e3f2fd;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-order-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 92, 153, 0.2);
+}
+
+.edit-order-card1 h2 {
+  color: #0d47a1;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.edit-order-card1 h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2196f3;
+  border-radius: 3px;
+}
+
+.form-section1 {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.form-section1 h3 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-left: 4px solid #2196f3;
+  padding-left: 10px;
+}
+
+.form-group1 {
+  margin-bottom: 20px;
+}
+
+.form-group1 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #0d47a1;
+}
+
+.form-input1, .form-select1, .form-textarea1 {
+  width: 95%;
+  padding: 12px 15px;
+  border: 1px solid #bbdefb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f5fbff;
+}
+
+.form-select1 {
+  width: 99%;
+}
+
+.form-input1:focus, .form-select1:focus, .form-textarea1:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+  outline: none;
+}
+
+.form-textarea1 {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.price-summary1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f5fbff;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.total-price1 {
+  color: #0d47a1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  animation: colorShift 3s infinite alternate;
+}
+
+@keyframes colorShift {
+  0% { color: #0d47a1; }
+  50% { color: #2196f3; }
+  100% { color: #64b5f6; }
+}
+
+.action-buttons1 {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.save-button1, .delete-button1, .cancel-button1 {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.save-button1 {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+}
+
+.save-button1:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.3);
+}
+
+.delete-button1 {
+  background: linear-gradient(135deg, #f44336, #e53935);
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.2);
+}
+
+.delete-button1:hover {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(244, 67, 54, 0.3);
+}
+
+.cancel-button1 {
+  background: linear-gradient(135deg, #9e9e9e, #757575);
+  color: white;
+  box-shadow: 0 4px 12px rgba(158, 158, 158, 0.2);
+}
+
+.cancel-button1:hover {
+  background: linear-gradient(135deg, #757575, #616161);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(158, 158, 158, 0.3);
+}
+
+.edit-loading1 {
+  text-align: center;
+  padding: 50px;
+  color: #2196f3;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

@@ -1,0 +1,204 @@
+/* Основной контейнер */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 70px;
+}
+
+/* Карточка входа */
+.login-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  margin-bottom: 93px;
+  margin: 0 auto;
+}
+
+/* Заголовок */
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+  color: #e74c3c;
+  background-color: #ffebee;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Форма входа */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Группа полей формы */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Метка поля */
+.form-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+/* Поле ввода */
+.form-input {
+  width: 95%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.form-input:focus {
+  border-color: #4CAF50;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Контейнер для поля пароля */
+.password-input-container {
+  position: relative;
+}
+
+/* Кнопка переключения видимости пароля */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #4CAF50;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Кнопка входа */
+.login-button {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:disabled {
+  background: #b3e5fc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Спиннер загрузки */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Стили для успешного уведомления */
+.login-success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeInOut 3s ease-in-out forwards;
+  position: relative;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Существующие стили ошибок (если нужно обновить) */
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

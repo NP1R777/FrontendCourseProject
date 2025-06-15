@@ -1,0 +1,268 @@
+/* Добавленные/измененные стили */
+.back-to-admin-btn {
+  background: none;
+  border: none;
+  color: #0d47a1;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-to-admin-btn:hover {
+  background: #e3f2fd;
+}
+
+/* Убраны лишние звездочки */
+.form-group3 label::after {
+  content: none !important;
+}
+
+/* Центрирование кнопок */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* Остальные стили остаются без изменений */
+.add-product-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-product-card3 {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 92, 153, 0.15);
+  overflow: hidden;
+  border: 1px solid #e3f2fd;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-product-card3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 92, 153, 0.2);
+}
+
+.add-product-card3 h2 {
+  color: #0d47a1;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.add-product-card3 h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #2196f3;
+  border-radius: 3px;
+}
+
+.form-group3 {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-row .form-group3 {
+  flex: 1;
+}
+
+.form-group3 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #0d47a1;
+}
+
+.form-input3, .form-textarea3 {
+  width: 95%;
+  padding: 12px 15px;
+  border: 1px solid #bbdefb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f5fbff;
+}
+
+.form-input31 {
+  width: 90%;
+  padding: 12px 15px;
+  border: 1px solid #bbdefb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f5fbff;
+}
+
+.form-input3:focus, .form-textarea3:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+  outline: none;
+}
+
+.form-input31:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+  outline: none;
+}
+
+.form-textarea3 {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #546e7a;
+  margin-top: 5px;
+}
+
+.input-error3 {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.error-message3 {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.submit-button3, .cancel-button3 {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.submit-button3 {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+}
+
+.submit-button3:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.3);
+}
+
+.cancel-button3 {
+  background: linear-gradient(135deg, #9e9e9e, #757575);
+  color: white;
+  box-shadow: 0 4px 12px rgba(158, 158, 158, 0.2);
+}
+
+.cancel-button3:hover {
+  background: linear-gradient(135deg, #757575, #616161);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(158, 158, 158, 0.3);
+}
+
+/* Стили для модального окна */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.admin-modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideUp 0.4s ease-out;
+}
+
+.admin-modal-content h3 {
+  color: #f44336;
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.admin-modal-content p {
+  color: #455a64;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.admin-modal-close-button {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.admin-modal-close-button:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
