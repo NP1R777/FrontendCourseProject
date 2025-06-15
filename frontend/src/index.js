@@ -7,9 +7,13 @@ import store from './store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+  < React.StrictMode >
     <Provider store={store}>
       <Root />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode >
 );
